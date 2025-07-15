@@ -1,0 +1,9 @@
+* [WIP] MPV Redirector
+MPV Redirector is a simple script to redirect video urls to mpv using yt-dlp.
+
+** Install
+Run ~make install~ from the root of this repository. By default the script uses ~$HOME/.local~ as a prefix but if you want to install to a different location you can use ~make PREFIX=/your/prefix/dir install~ to install to a different directory. For example, you can run ~make PREFIX=/usr/local install~ to install the script to ~/usr/local/bin~ instead of the default.
+** Uninstall
+Run ~make uninstall~ to uninstall the files from your system, specifying the prefix as shown above if you use a non-default path.
+** How to use
+If you wish to use this as a way to intercept URL queries before they reach your browser (right now it's hardcoded to firefox but I plan to make a more general implementation), simply set mpv-redirector as your default browser from within gnome or kde settings (or the settings of whatever desktop environment you use). The Makefile adds a .desktop entry to your ~$HOME/.local/share/applications/~ directory so you can use it from the GUI to automatically throw videos into mpv or display them on your browser if it's not a video site.

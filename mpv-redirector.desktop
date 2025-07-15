@@ -1,0 +1,13 @@
+[Desktop Entry]
+Exec=/home/ollie/.local/scripts/url-to-mpv-or-browser.sh %u
+Icon=asy
+Terminal=true
+Name=Video URL Handler
+GenericName=Web Browser
+Comment=A program for playing videos from websites outside of the browser
+Type=Application
+Categories=AudioVideo;Utility;Network;WebBrowser;X-Internet-Browser;
+StartupNotify=true
+X-Desktop-File-Install-Version=0.0.01
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;x-scheme-handler/https;text/html;
+Keywords=web;browser;internet;
