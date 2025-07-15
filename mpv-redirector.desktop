@@ -1,10 +1,10 @@
 [Desktop Entry]
-Exec=/home/ollie/.local/scripts/url-to-mpv-or-browser.sh %u
+Exec=mpv-redirector.sh %u
 Icon=asy
 Terminal=true
-Name=Video URL Handler
+Name=MPV Redirector
 GenericName=Web Browser
-Comment=A program for playing videos from websites outside of the browser
+Comment=A script to redirect video urls to mpv.
 Type=Application
 Categories=AudioVideo;Utility;Network;WebBrowser;X-Internet-Browser;
 StartupNotify=true
