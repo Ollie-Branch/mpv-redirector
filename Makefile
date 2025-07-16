@@ -22,9 +22,11 @@ install:
 	cp $(SCRIPT) $(PREFIX)/bin
 # Why don't .desktop files use path or expand vars?
 	sed 's|EXEC|Exec=$(EXP_PREFIX)/bin/$(SCRIPT) %u|g' $(LAUNCHER_FILE) >> $(LAUNCHER_DIR)/$(LAUNCHER_FILE)
+	update-desktop-database $(LAUNCHER_DIR)
 
 uninstall:
 	rm $(LAUNCHER_DIR)/$(LAUNCHER_FILE)
 	rm $(PREFIX)/bin/$(SCRIPT)
+	update-desktop-database $(LAUNCHER_DIR)
 
 # end
