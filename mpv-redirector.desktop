@@ -1,7 +1,7 @@
 [Desktop Entry]
 # This line below only exists for sed to replace in our makefile so that it will actually point to the right directory on the user's machine
 EXEC
-Icon=asy
+Icon=media-playback-start
 Terminal=true
 Name=MPV Redirector
 GenericName=Web Browser
