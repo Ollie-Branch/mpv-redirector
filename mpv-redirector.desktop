@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=mpv-redirector.sh %u
+EXEC
 Icon=asy
 Terminal=true
 Name=MPV Redirector

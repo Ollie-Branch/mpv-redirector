@@ -8,6 +8,7 @@ SCRIPT := mpv-redirector.sh
 LAUNCHER_FILE := mpv-redirector.desktop
 LAUNCHER_DIR := ~/.local/share/applications
 PREFIX ?= ~/.local
+EXP_PREFIX = $(shell echo $(PREFIX))
 
 show:
 	echo $(SCRIPT)
@@ -18,8 +19,9 @@ show:
 install:
 	mkdir -p $(PREFIX)/bin
 	mkdir -p $(LAUNCHER_DIR)
-	cp $(LAUNCHER_FILE) $(LAUNCHER_DIR)/
 	cp $(SCRIPT) $(PREFIX)/bin
+# Why don't .desktop files use path or expand vars?
+	sed 's|EXEC|Exec=$(EXP_PREFIX)/bin/$(SCRIPT) %u|g' $(LAUNCHER_FILE) >> $(LAUNCHER_DIR)/$(LAUNCHER_FILE)
 
 uninstall:
 	rm $(LAUNCHER_DIR)/$(LAUNCHER_FILE)
