@@ -8,4 +8,4 @@ Run ~make uninstall~ to uninstall the files from your system, specifying the pre
 ** How to use
 If you wish to use this as a way to intercept URL queries before they reach your browser (right now it's hardcoded to firefox but I plan to make a more general implementation), simply set mpv-redirector as your default browser from within gnome or kde settings (or the settings of whatever desktop environment you use). The Makefile adds a .desktop entry to your ~$HOME/.local/share/applications/~ directory so you can use it from the GUI to automatically throw videos into mpv or display them on your browser if it's not a video site.
 *** IMPORTANT
-Wherever you install the script using the makefile has to be in your PATH for this to work.
+If you want to call the script from the command line, change the prefix to a directory your PATH. If you just call it using your .desktop file launcher, this is unneeded, as the makefile uses a sed command to change the ~Exec~ line to point to wherever the script is installed to.
