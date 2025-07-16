@@ -26,7 +26,7 @@ install:
 		rm $(LAUNCHER_DIR)/$(LAUNCHER_FILE) ; \
 	fi
 # Why don't .desktop files use path or expand vars?
-	sed 's|EXEC|Exec=$(EXP_PREFIX)/bin/$(SCRIPT) %u|g' $(LAUNCHER_FILE) \
+	sed 's|EXEC|Exec=/usr/bin/env XDG_CONFIG_HOME=$(XDG_CONFIG_HOME) $(EXP_PREFIX)/bin/$(SCRIPT) %u|g' $(LAUNCHER_FILE) \
 		>> $(LAUNCHER_DIR)/$(LAUNCHER_FILE)
 	update-desktop-database $(LAUNCHER_DIR)
 

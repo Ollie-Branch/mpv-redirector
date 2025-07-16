@@ -3,6 +3,8 @@
 # We require bash now due to needing its arrays to implement this functionality
 # cleanly
 
+echo "$XDG_CONFIG_HOME"
+
 CONFIG_DIR="$XDG_CONFIG_HOME/mpv-redirector"
 CONFIG_FILE="$CONFIG_DIR/config.sh"
 # As much as I like flatpak, why can't they just be normal
