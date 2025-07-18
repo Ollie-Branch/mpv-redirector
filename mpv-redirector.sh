@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: bash, fzf, yt-dlp, mpv, dex
+# Dependencies: bash, fzf, yt-dlp, mpv, gtk-open
 # We require bash now due to needing its arrays to implement this functionality
 # cleanly
 
@@ -56,7 +56,7 @@ echo $1
 yt-dlp -f bestvideo*+bestaudio/best $1 -o - | mpv -
 
 if [ ! $? = 0 ]; then
-    dex "$PREFERRED_BROWSER"
+    gtk-launch "$(echo $PREFERRED_BROWSER | awk -F"/" '{print $NF}')" $1
 fi
 
 sleep 5
