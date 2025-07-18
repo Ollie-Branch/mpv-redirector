@@ -15,5 +15,13 @@ Run ~make uninstall~ to uninstall the files from your system, specifying the pre
 + yt-dlp
 ** How to use
 If you wish to use this as a way to intercept URL queries before they reach your browser, simply set mpv-redirector as your default browser from within gnome or kde settings (or the settings of whatever desktop environment you use). The Makefile adds a .desktop entry to your ~$HOME/.local/share/applications/~ directory so you can use it from the GUI to automatically throw videos into mpv or display them on your browser if it's not a video site. The script will run a first-time setup if it doesn't detect an existing configuration at ~$HOME/.config/mpv-redirector/config.sh~ and it will just ask which browser you prefer to launch non-video urls in.
-*** IMPORTANT
-If you want to call the script from the command line, change the prefix to a directory your PATH. If you just call it using your .desktop file launcher, this is unneeded, as the makefile uses a sed command to change the ~Exec~ line to point to wherever the script is installed to.
+*** First time setup
+The script contains a first time setup if a config file isn't detected at ~$XDG_CONFIG_HOME/.config/mpv-redirector.sh~, the first-time setup is barebones for now, with only an fzf window to choose the preferred browser to launch non-video urls in.jk
+** TODOs
+*** TODO Add a way to configure quality and pass that into yt-dlp, and add that configured quality to ~$XDG_CONFIG_HOME/mpv-redirector/config.sh~
+**** TODO Add configuration option for default quality into the first-time setup
+*** TODO Support multiple backends for launching .desktop files, degrading to our own if none are installed.
+**** TODO Maybe add a preferred backend for users to configure
+*** TODO Prevent ~make install~ from being run using privilege escalation (~sudo~, ~doas~, ~pkexec~, etc.), or detect privilege escalation and put the .desktop file in the right place (if using root privs it would be ~/usr/share/applications~).
+*** TODO Add extra information to fzf windows when running first time setup, such as what you're configuring.
+*** TODO Add optional whitelisting of domains, so only specific ones are sent to yt-dlp (there are some websites where mpv will play a video embedded on the website where it's just a small part of an article)
