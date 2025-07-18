@@ -10,7 +10,7 @@ Run ~make uninstall~ to uninstall the files from your system, specifying the pre
 ** Dependencies
 + bash (don't know how to do arrays in posix-compliant shell)
 + fzf
-+ gtk-open (the plan is to support a variety of desktop launchers, and fall back to our own implementation if none are found, but this is what we require for now).
++ gtk-launch (the plan is to support a variety of desktop launchers, and fall back to our own implementation if none are found, but this is what we require for now).
 + mpv
 + yt-dlp
 ** How to use
